@@ -6,7 +6,10 @@ use App\Repository\ResponseRepository;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ApiResource]
+#[ApiResource(
+        collectionOperations: ['get'],
+        itemOperations: ['get'],
+)]
 
 #[ORM\Entity(repositoryClass: ResponseRepository::class)]
 class Response
