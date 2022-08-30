@@ -6,7 +6,10 @@ use App\Repository\RiasecRepository;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ApiResource]
+#[ApiResource(
+    collectionOperations: ['get','post'],
+    itemOperations: ['get','put'],
+)]
 
 #[ORM\Entity(repositoryClass: RiasecRepository::class)]
 class Riasec
