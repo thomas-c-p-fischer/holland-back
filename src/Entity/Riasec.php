@@ -3,7 +3,10 @@
 namespace App\Entity;
 
 use App\Repository\RiasecRepository;
+use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
+
+#[ApiResource]
 
 #[ORM\Entity(repositoryClass: RiasecRepository::class)]
 class Riasec
