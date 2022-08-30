@@ -1,0 +1,13 @@
+# config/packages/api_platform.yaml
+api_platform:
+    defaults:
+        pagination_enabled: false #pagination désactivée "false"
+    title: 'Test de Holland'
+    description: 'Une Symfony API pour le test de Holland '
+    version: '1.0.0'
+    mapping:
+        paths: ['%kernel.project_dir%/src/Entity']
+    patch_formats:
+        json: ['application/merge-patch+json']
+    swagger:
+        versions: [3]
