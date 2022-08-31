@@ -34,6 +34,9 @@ class Question
     #[ORM\Column]
     private ?int $serial = null;
 
+    #[ORM\Column(length: 500, nullable: true)]
+    private ?string $img = null;
+
     public function __construct()
     {
         $this->responses = new ArrayCollection();
@@ -100,6 +103,18 @@ class Question
     public function setSerial(int $serial): self
     {
         $this->serial = $serial;
+
+        return $this;
+    }
+
+    public function getImg(): ?string
+    {
+        return $this->img;
+    }
+
+    public function setImg(?string $img): self
+    {
+        $this->img = $img;
 
         return $this;
     }
