@@ -46,8 +46,7 @@ class Authenticator extends AbstractLoginFormAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-        // For example: penser à changer la route vers 'admin' pour le dashboard
-        return new RedirectResponse($this->urlGenerator->generate('accueil'));
+        return new RedirectResponse($this->urlGenerator->generate('admin'));
         // throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 

@@ -126,4 +126,10 @@ class Question
 
         return $this;
     }
+
+    //Ajout de cette méthode pour pouvoir écrire la question
+    public function getQuestion()
+    {
+        return $this->getText();
+    }
 }
