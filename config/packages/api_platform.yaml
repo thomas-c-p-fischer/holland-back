@@ -3,7 +3,7 @@ api_platform:
     defaults:
         pagination_enabled: false #pagination désactivée "false"
     title: 'Test de Holland'
-    description: 'Une Symfony API pour le test de Holland '
+    description: 'Un API Symfony pour le test de Holland 2022 - DWWM '
     version: '1.0.0'
     mapping:
         paths: ['%kernel.project_dir%/src/Entity']
@@ -11,3 +11,6 @@ api_platform:
         json: ['application/merge-patch+json']
     swagger:
         versions: [3]
+
+
+

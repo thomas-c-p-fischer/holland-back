@@ -9,8 +9,8 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use ApiPlatform\Core\Annotation\ApiResource;
 
 #[ApiResource(
-    collectionOperations: ['get','post'],
-    itemOperations: ['get','put','delete'],
+    collectionOperations: ['get','post'=>["security"=>"is_granted('ROLE_ADMIN') or object == user"]],
+    itemOperations: ['get','put','delete'=>["security"=>"is_granted('ROLE_ADMIN') or object == user"]]
 )]
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]

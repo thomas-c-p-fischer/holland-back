@@ -7,11 +7,14 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ApiResource(
     collectionOperations: ['get'],
     itemOperations: ['get'],
+    normalizationContext: ['groups' => ['Question:Read']],
+
 )]
 
 #[ORM\Entity(repositoryClass: QuestionRepository::class)]
@@ -20,18 +23,23 @@ class Question
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(["Question:Read"])]
     private ?int $id = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Groups(["Question:Read"])]
     private ?string $text = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(["Question:Read"])]
     private ?string $category = null;
 
     #[ORM\ManyToMany(targetEntity: Response::class)]
+    #[Groups(["Question:Read"])]
     private Collection $responses;
 
     #[ORM\Column]
+    #[Groups(["Question:Read"])]
     private ?int $serial = null;
 
     #[ORM\Column(length: 500, nullable: true)]
