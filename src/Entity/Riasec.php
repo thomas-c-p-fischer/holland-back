@@ -5,10 +5,13 @@ namespace App\Entity;
 use App\Repository\RiasecRepository;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ApiResource(
     collectionOperations: ['get','post'],
     itemOperations: ['get','put'],
+    denormalizationContext: ['groups' => ['Riasec:Write']],
+    normalizationContext: ['groups' => ['Riasec:Read']],
 )]
 
 #[ORM\Entity(repositoryClass: RiasecRepository::class)]
@@ -17,24 +20,31 @@ class Riasec
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups(["Riasec:Read","Riasec:Write"])]
     private ?int $id = null;
 
     #[ORM\Column]
+    #[Groups(["Riasec:Read","Riase:cWrite"])]
     private ?int $realiste = null;
 
     #[ORM\Column]
+    #[Groups(["Riasec:Read","Riasec:Write"])]
     private ?int $investigateur = null;
 
     #[ORM\Column]
+    #[Groups(["Riasec:Read","Riasec:Write"])]
     private ?int $artistique = null;
 
     #[ORM\Column]
+    #[Groups(["Riasec:Read","Riasec:Write"])]
     private ?int $social = null;
 
     #[ORM\Column]
+    #[Groups(["Riasec:Read","Riasec:Write"])]
     private ?int $entreprenant = null;
 
     #[ORM\Column]
+    #[Groups(["Riasec:Read","Riasec:Write"])]
     private ?int $conventionnel = null;
 
     public function getId(): ?int
