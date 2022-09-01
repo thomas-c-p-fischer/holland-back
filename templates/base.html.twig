@@ -2,14 +2,22 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         <title>{% block title %}Welcome!{% endblock %}</title>
     </head>
     <body>
-        {% block body %}
-            <a href="{{ path('login') }}">Se connecter</a>
-            {% if app.user %}
-                <a href="{{ path('logout') }}">Se déconnecter</a>
-            {% endif %}
-        {% endblock %}
+    <div class="marquee-rtl">
+        <h1>Bienvenue à l'administrateur</h1>
+    </div>
+            {% block body %}
+                <div id="connecter" class="liens">
+                    <a href="{{ path('login') }}">Se connecter</a>
+                </div>
+                {% if app.user %}
+                    <div id="deconnecter" class="liens">
+                        <a href="{{ path('logout') }}">Se déconnecter</a>
+                    </div>
+                {% endif %}
+            {% endblock %}
     </body>
 </html>
