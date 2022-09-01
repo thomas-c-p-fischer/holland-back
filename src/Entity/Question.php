@@ -43,6 +43,7 @@ class Question
     private ?int $serial = null;
 
     #[ORM\Column(length: 500, nullable: true)]
+    #[Groups(["Question:Read"])]
     private ?string $img = null;
 
     public function __construct()
