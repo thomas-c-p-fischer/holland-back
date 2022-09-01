@@ -107,3 +107,10 @@ h1, h2 {
     color: rgb(0, 0, 0);
     background-color: rgb(252, 252, 252);
 }
+
+#copyright{
+    margin: 9% 0 0 0.5%;
+    color: whitesmoke;
+    font-size: 0.7em;
+    font-family: 'Kanit', sans-serif;
+}
