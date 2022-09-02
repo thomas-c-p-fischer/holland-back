@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+*{
+    text-decoration: none; /* enlever le surlignage */
+    list-style-type:none; /* enlever les puces */
+    margin:0; /* enlever les marges */
+    padding:0; /* enlever  le rembourrage */
+}
 body{
     background-image: url("../../img/1209999.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 a {
     font-family: 'Kanit', sans-serif;
@@ -47,9 +55,11 @@ h1, h2 {
     }
 }
 #date{
+    top: 0;
     position: absolute;
     color: whitesmoke;
     font-size: 75%;
+    margin-top: 17%;
 }
 
 #borderRadius{
@@ -67,11 +77,16 @@ h1, h2 {
     height: 15em;
     opacity: 0.9;
     transition: 0.8s;
+    text-align: center;
 }
 #borderRadius:hover{
     opacity: 1;
 }
 
+#formulaires{
+    margin-top: 15%;
+    text-align: center;
+}
 .form-control {
     width: 15em;
     transition: ease-in-out, width .35s ease-in-out; /*augmente la taille*/
@@ -81,6 +96,7 @@ h1, h2 {
     background-color: rgba(182, 232, 226, 0.17);
     border-radius: 4px;
     color: whitesmoke;
+    text-align: center;
 }
 ::placeholder {
     color: whitesmoke;
@@ -89,6 +105,7 @@ h1, h2 {
 }
 .form-control:focus {
     width: 250px;
+    text-align: center;
 }
 
 .submit {
@@ -111,8 +128,12 @@ h1, h2 {
 }
 
 #copyright{
-    margin: 9% 0 0 0.5%;
+
+    position: absolute;
+    bottom: 0;
+    margin: 9% 0 1% 0.5%;
     color: whitesmoke;
     font-size: 0.7em;
     font-family: 'Kanit', sans-serif;
+
 }
