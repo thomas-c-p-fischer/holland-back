@@ -65,7 +65,7 @@ h1, h2 {
 #borderRadius{
     background-image: url("../../img/giphy.gif");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 110%;
     border-radius: 50% 20% / 10% 40%;
     box-shadow:  0 4px 3px 2px rgb(9, 0, 0), 0 2px 3px 2px rgb(9, 0, 0);
     font-family: 'Kanit', sans-serif;
@@ -84,7 +84,7 @@ h1, h2 {
 }
 
 #formulaires{
-    margin-top: 15%;
+    margin-top: 17%;
     text-align: center;
 }
 .form-control {
