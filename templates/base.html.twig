@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+</head>
+<body>
     <div class="marquee-rtl">
         <h1>Bienvenue à l'administrateur [ 🦹 ]</h1>
     </div>
-            {% block body %}
-                <div id="connecter" class="liens">
-                    <a href="{{ path('login') }}">Se connecter</a>
-                </div>
-                {% if app.user %}
-                    <div id="deconnecter" class="liens">
-                        <a href="{{ path('logout') }}">Se déconnecter</a>
-                    </div>
-                {% endif %}
-            {% endblock %}
-    <div id="copyright">
-        <p>© CopyDown - {{ "now" | date('Y') }} - DWWM</p>
+    {% block body %}
+        <div id="connecter" class="liens">
+            <a href="{{ path('login') }}">Se connecter</a>
+        </div>
+        {% if app.user %}
+            <div id="deconnecter" class="liens">
+                <a href="{{ path('logout') }}">Se déconnecter</a>
+            </div>
+        {% endif %}
+    {% endblock %}
+    <footer id="copyright">
+        <div >
+            <p>© CopyDown - {{ "now" | date('Y') }} - DWWM</p>
+        </div>
+    </footer>
     </div>
-    </body>
+</body>
 </html>
