@@ -3,21 +3,26 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Abo Accueil{% endblock %}</title>
     </head>
     <body>
-    <div class="marquee-rtl">
-        <h1>Bienvenue à l'administrateur [ 🦹 ]</h1>
-    </div>
-            {% block body %}
-                <div id="connecter" class="liens">
-                    <a href="{{ path('login') }}">Se connecter</a>
+            {% block main %}
+                <div class="marquee-rtl">
+                    <h1>Bienvenue à l'atelier bilan orientation [ 🦹 ]</h1>
                 </div>
-                {% if app.user %}
-                    <div id="deconnecter" class="liens">
-                        <a href="{{ path('logout') }}">Se déconnecter</a>
+                <div id="borderAccueil">
+                    <div id="date">{{ "now" | date('d-m-Y H:i:s') }}</div>
+                    {% if not app.user %}
+                    <div class="liens">
+                        <a href="{{ path('login') }}" id="connecter">Se connecter</a>
                     </div>
-                {% endif %}
+                    {% endif %}
+                    {% if app.user %}
+                        <div class="liens">
+                            <a href="{{ path('logout') }}" id="deconnecter">Se déconnecter</a>
+                        </div>
+                    {% endif %}
+                </div>
             {% endblock %}
     <div id="copyright">
         <p>© CopyDown - {{ "now" | date('Y') }} - DWWM</p>
