@@ -23,11 +23,11 @@ class Response
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(["Response:Read"])]
+    #[Groups(["Question:Read"])]
     private ?string $name = null;
 
     #[ORM\Column]
-    #[Groups(["Response:Read"])]
+    #[Groups(["Question:Read"])]
     private ?int $weight = null;
 
     public function getId(): ?int
