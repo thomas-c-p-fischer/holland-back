@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Question;
 use App\Entity\User;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -50,7 +51,10 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToRoute('Retour au site', 'fas fa-home', 'accueil');
-        yield MenuItem::linkToCrud('User', 'fas fa-user-alt', User::class);
+        yield MenuItem::subMenu('Utilisateurs', 'fa-solid fa-users')->setSubItems([
+            MenuItem::linkToCrud('Créer un utilisateur', 'fas fa-plus-circle', User::class)->setAction(Crud::PAGE_NEW),
+            MenuItem::linkToCrud('Voir les utilisateurs', 'fas fa-eye', User::class),
+        ]);
         yield MenuItem::linkToCrud('Question', 'fas fa-question', Question::class);
     }
 }

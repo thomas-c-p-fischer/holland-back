@@ -95,8 +95,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function setPassword(string $password): self
     {
-        //cette ligne permet d'avoir le password hash partout, aussi bien en easyAdmin qu'en BDD
-        $this->password = hash('sha256',$password);
+        if (!is_null($password)) {
+            $this->password = $password;
+        }
 
         return $this;
     }
